@@ -11,3 +11,6 @@
 
 ## Proof: Intune admin center access
 ![Intune admin center home](./ENV-01-Intune-Home.png)
+
+## Proof:MDM Authority = Microsoft Intune
+(./ENV-04-MDMAuthority_MicrosoftIntune.png)
