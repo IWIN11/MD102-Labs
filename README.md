@@ -2,6 +2,12 @@
 
 This repo documents my hands-on MD-102 learning through reproducible Intune labs.
 
+## Start here
+
+- ✅ Environment setup (Intune tenant / licenses / tenant status): [00-Environment/00-ENV-SETUP.md](./00-Environment/00-ENV-SETUP.md)
+- 🧪 Labs index (all labs): [labs/](./labs/)
+- 📄 Lab template: [LAB-[TEMPLATE].md](./labs/LAB-[TEMPLATE].md)
+
 ## Evidence standard (for every lab)
 Each lab includes:
 - Goal (target state)
