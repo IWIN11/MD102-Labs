@@ -1,4 +1,4 @@
-# LAB-000 — Enable Mobile Device Management (MDM) [TEMPLATE]
+# LAB-000 — Enable Mobile Device Management (MDM) TEMPLATE
 
 ## Goal (target state)
 - Enable tenant-level MDM so Intune can manage devices.
