@@ -16,6 +16,6 @@ Each lab includes:
 - Status + date
 
 ## Current progress
-- LAB-000: Template created (in progress)
+- LAB-000: 000-ENV-SETUP.md (done)
 
 Last updated: 2026-01-10
