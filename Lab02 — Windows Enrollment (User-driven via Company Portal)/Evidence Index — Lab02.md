@@ -11,7 +11,7 @@
 
 ### Evidence
 - `lab02_01_LocalAdmin_verification.png`  
-![](evidence/lab02_01_LocalAdmin_verification)
+![](evidence/lab02_01_LocalAdmin_verification.png)
 
 - `lab02_02_LocalAdmin_verification.png`  
 ![](evidence/lab02_02_LocalAdmin_verification.png)
