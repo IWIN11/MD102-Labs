@@ -1,6 +1,6 @@
 # Lab 02 — Windows Enrollment (User-driven via Company Portal)
 
-Evidence gallery: see [evidence-index](./evidence-index.md)
+Evidence gallery: see [Evidence Index](./Evidence%20Index%20—%20Lab02.md)
 
 **Type:** LAB  
 **Date:** 2026-01-16  
