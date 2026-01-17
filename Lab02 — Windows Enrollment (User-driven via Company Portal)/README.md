@@ -1,5 +1,7 @@
 # Lab 02 — Windows Enrollment (User-driven via Company Portal)
 
+Evidence gallery: see [evidence-index](./evidence-index.md)
+
 **Type:** LAB  
 **Date:** 2026-01-16  
 **Status:** Done (Enrollment + Intune validation complete)
