@@ -125,10 +125,10 @@
 ![](evidence/lab02_27_AccessWorkorSchool_connected_list_verification.png)
 
 - `lab02_28_AccessWorkorSchool_connected_Info_verification.png`  
-![](evidence/lab02_28_AccessWorkorSchool_connected_Info_verification.png)
+![](evidence/lab02_28_AccessWorkorSchool_connected_lnfo_verification.png)
 
 - `lab02_28_AccessWorkorSchool_Info_Sync_verification.png`  
-![](evidence/lab02_28_AccessWorkorSchool_Info_Sync_verification.png)
+![](evidence/lab02_28_AccessWorkorSchool_lnfo_Sync_verification.png)
 
 ---
 
