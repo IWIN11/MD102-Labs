@@ -21,16 +21,20 @@
 ## Scope & Limits
 
 ### Scope (What this lab environment covers)
-- This tenant is set up for **MD-102 hands-on labs** with evidence-based documentation.
-- In scope for this environment:
-  - **User-driven / manual enrollment** (e.g., Windows 11 Pro enrolled via Company Portal)
-  - **Device inventory and baseline validation** (Devices list, ownership, compliance status, MDM authority)
-  - **Baseline policy testing** to be covered in later labs (configuration, compliance, app deployment as applicable)
-  - **Basic operational actions** as needed in later labs (e.g., device sync), with screenshots as evidence
+This tenant is set up for MD-102 hands-on labs with evidence-based documentation.
+
+In scope for this environment:
+- User-driven / manual enrollment (e.g., Windows 11 Pro enrolled via Company Portal)
+- Device inventory and baseline validation (Devices list, ownership, compliance status, MDM authority)
+- Baseline policy testing (to be covered in later labs): configuration profiles, compliance policies, and app deployment (as applicable)
+- Basic operational actions in later labs (e.g., device sync), with screenshots captured as evidence
 
 ### Limits (What is out of scope and why)
-- This environment is intentionally scoped to what is supported by the current tenant setup (e.g., **Microsoft Intune Plan 1**) and is not meant to demonstrate every enterprise feature.
-- Out of scope for this lab environment (due to licensing/prerequisites and to keep the lab reproducible):
-  - **Identity premium controls** such as Conditional Access (when additional Entra licensing is required)
-  - **Some automated enrollment scenarios** that depend on additional prerequisites/licensing
-- Conclusion: The labs focus on **reproducible workflows within the tenant’s capability boundaries**, with clear evidence for each step.
+This environment is intentionally scoped to what is supported by the current tenant setup (e.g., Microsoft Intune Plan 1) and is not intended to demonstrate every enterprise feature.
+
+Out of scope for this lab environment (due to licensing/prerequisites and to keep the lab reproducible):
+- Identity premium controls such as Conditional Access (requires Microsoft Entra ID Premium licensing)
+- Some automated enrollment paths that depend on additional identity/licensing prerequisites
+
+**Conclusion:** These labs focus on reproducible workflows within the tenant’s capability boundaries, with clear evidence captured for each step.
+
