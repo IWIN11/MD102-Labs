@@ -33,8 +33,8 @@ In scope for this environment:
 This environment is intentionally scoped to what is supported by the current tenant setup (e.g., Microsoft Intune Plan 1) and is not intended to demonstrate every enterprise feature.
 
 Out of scope for this lab environment (due to licensing/prerequisites and to keep the lab reproducible):
-- Identity premium controls such as Conditional Access (requires Microsoft Entra ID Premium licensing)
-- Some automated enrollment paths that depend on additional identity/licensing prerequisites
+- Identity premium controls such as Conditional Access (requires Microsoft Entra ID Premium (P1/P2) licensing)
+- Some automated enrollment scenarios that require additional identity/licensing prerequisites beyond this tenant
 
 **Conclusion:** These labs focus on reproducible workflows within the tenant’s capability boundaries, with clear evidence captured for each step.
 
