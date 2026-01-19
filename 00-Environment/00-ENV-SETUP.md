@@ -16,4 +16,4 @@
 ![MDM Authority = Microsoft Intune](./ENV-04-MDMAuthority_MicrosoftIntune.png)
 
 ## Proof: Admin permissions confirmed (Intune RBAC)
-![Intune admin center → Tenant administration → Roles → My permissions (shows administrator/full permissions)](./ENV_05_Intuneadmincenter _Tenant administration_Roles_My permissions.png)
+![ENV_05_Intuneadmincenter _Tenant administration_Roles_My permissions](./ENV_05_Intuneadmincenter _Tenant administration_Roles_My permissions.png)
