@@ -33,7 +33,7 @@ The lab will not require linking personal Canada/China phone identities. Enrollm
 
 ## Evidence / References
 - Environment readiness and tenant capability boundaries:  
-  https://github.com/IWIN11/MD102-Labs/blob/main/00-Environment/00-ENV-SETUP.md
+  [00-Environment/00-ENV-SETUP.md](../00-Environment/00-ENV-SETUP.md)
 
 - Windows enrollment evidence (primary platform):  
   https://github.com/IWIN11/MD102-Labs/tree/main/Lab02%20%E2%80%94%20Windows%20Enrollment%20(User-driven%20via%20Company%20Portal)
