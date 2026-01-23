@@ -2,7 +2,7 @@
 Evidence gallery: see [Evidence Index](./evidence-index.md)
 
 **Type:** LAB  
-**Date:** 2026-01-xx  
+**Date:** 2026-01-23  
 **Status:** Done  
 
 ---
