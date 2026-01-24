@@ -1,5 +1,4 @@
 # Lab03 — Primary User Fix Path + Standard User Validation
-Evidence gallery: see [Evidence Index](./evidence-index.md)
 
 **Type:** LAB  
 **Date:** 2026-01-23  
