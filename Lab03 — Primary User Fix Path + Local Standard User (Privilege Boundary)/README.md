@@ -48,7 +48,7 @@
 ### Step 02 — Validate permissions: Intune admin role still cannot edit Primary user
 
 **Purpose:** Confirm whether assigning Intune administrator permissions to the Aeris Lab account resolves the issue. 
-##Result:## the **Change Primary user** control remained disabled after role assignment, so further investigation moved to **device join/enrollment state** rather than continuing RBAC changes.
+**Result:** the **Change Primary user** control remained disabled after role assignment, so further investigation moved to **device join/enrollment state** rather than continuing RBAC changes.
 
 **Evidence:** Lab03_11–Lab03_13
 
