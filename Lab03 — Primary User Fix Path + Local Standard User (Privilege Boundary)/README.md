@@ -3,7 +3,7 @@
 **Type:** LAB  
 **Date:** 2026-01-23  
 **Status:** Done  
-
+**Note:** Evidence filenames reflect the capture sequence during troubleshooting; the step numbers reflect the logical remediation narrative.
 ---
 
 ## Goal (Target State)
@@ -36,7 +36,7 @@
 
 ### Step 01 — Pre-check: Intune device list baseline (Primary user not editable on PC1)
 
-**Purpose:** Capture the baseline state in Intune before any changes, and document the initial issue: **PC1’s Primary user could not be edited**, which does not match typical enterprise operational needs.  
+**Purpose:** Capture the baseline state in Intune before any changes, and document the initial issue: **PC1’s Primary user could not be edited**, which does not match typical enterprise operational needs. Primary user (Intune) is the device’s assigned user record used for ownership and some user-scoped management contexts; the issue here is that the Change action was disabled.  
 
 **Evidence:** Lab03_01–Lab03_03
 
