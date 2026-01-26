@@ -60,7 +60,7 @@
 
 ### Step 03 — Device state check on PC1: AzureADJoined = No
 
-**Purpose:** Verify PC1’s join state to identify why user assignment actions are blocked. Observation: **AzureADJoined = No**, suggesting the device is not properly joined/registered in Entra ID for expected identity-bound management behavior.  
+**Purpose:** Verify PC1’s join state to identify why user assignment actions are blocked. Observation: **AzureADJoined = No**, suggesting the device is not properly joined/registered in Entra ID for expected identity-bound management behavior.  Working assumption: when a device is **not Entra ID joined/registered**, Intune may not allow identity-bound actions (such as Primary user assignment) to be executed from the device record.
 
 **Evidence:** Lab03_14–Lab03_15
 
@@ -93,7 +93,7 @@
 
 ### Step 06 — Detach old connection and join device to Entra ID using Beta
 
-**Purpose:** Remove the previous linkage as needed, complete **Entra ID join** using Beta, and confirm the device reports **AzureADJoined = Yes**.  
+**Purpose:** Remove the previous linkage as needed, complete **Entra ID join** using Beta, and confirm the device reports **AzureADJoined = Yes**.  “Detach old connection” refers to disconnecting the previous **Work or school account / organizational enrollment binding** on the device before re-joining with **Beta** to avoid mixed identity state.
 
 **Evidence:** Lab03_16–Lab03_23
 
@@ -111,6 +111,8 @@
 
 **Purpose:** Sign in to Company Portal with Beta and validate the device is successfully enrolled and visible in Intune (device list + device details).  
 
+**Note:** Company Portal sign-in required **MFA (Microsoft Authenticator)** for Beta, which is captured as part of the enrollment validation evidence.
+
 **Evidence:** Lab03_24–Lab03_29
 
 ![](./evidence/Lab03_24_companypotal_signin_Beta.png)
@@ -123,7 +125,7 @@
 
 ### Step 08 — Add a local standard user (non-Microsoft account)
 
-**Purpose:** Create a local (non-cloud) standard user account to support controlled local access and to test standard-user operational scenarios on a managed endpoint.  
+**Purpose:** Create a local (non-cloud) standard user account to support controlled local access and to test standard-user operational scenarios on a managed endpoint.  This local standard account serves as a **control account** for future break-glass / offline troubleshooting scenarios on a managed endpoint, independent of cloud identity.
 
 **Evidence:** Lab03_30–Lab03_34
 
@@ -137,6 +139,8 @@
 ### Step 09 — Fix local privilege: remove Beta from Administrators; confirm standard
 
 **Purpose:** Enforce least privilege by removing Beta from the local **Administrators** group and confirming Beta operates as a **standard user** on the managed endpoint.  
+
+**Observation:** the joining user may be placed into local **Administrators** during the join flow; this step explicitly removes that elevation to enforce **least privilege**.
 
 **Evidence:** Lab03_35–Lab03_38
 
@@ -153,4 +157,5 @@
 - Beta user created, licensed, and used to join device to Entra ID.
 - Device appears in Intune and shows expected presence after Company Portal sign-in.
 - Local privilege verified: Beta is standard user (not in Administrators).
+- After Entra ID join + Company Portal enrollment, the **Primary user edit action became available** on PC1 in Intune (evidence shows the control turning active).
 
