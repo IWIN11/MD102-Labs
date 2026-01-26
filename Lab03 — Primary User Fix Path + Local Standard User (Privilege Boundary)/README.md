@@ -36,7 +36,7 @@
 
 ### Step 01 — Pre-check: Intune device list baseline (Primary user not editable on PC1)
 
-**Purpose:** Capture the baseline state in Intune before any changes, and document the initial issue: **PC1’s Primary user could not be edited**, which does not match typical enterprise operational needs. Primary user (Intune) is the device’s assigned user record used for ownership and some user-scoped management contexts; the issue here is that the Change action was disabled.  
+**Purpose:** Capture the baseline state in Intune before any changes, and document the initial issue: **PC1’s Primary user could not be edited**, which does not match typical enterprise operational needs. **Primary user (Intune)** is the device’s assigned user record used for ownership and some user-scoped management contexts; the issue here is that the **Change** action was disabled.  
 
 **Evidence:** Lab03_01–Lab03_03
 
@@ -47,7 +47,8 @@
 
 ### Step 02 — Validate permissions: Intune admin role still cannot edit Primary user
 
-**Purpose:** Confirm whether assigning Intune administrator permissions to the Aeris Lab account resolves the issue. Result: **Primary user on PC1 remained non-editable**, indicating the blocker is not solely RBAC/role assignment.  
+**Purpose:** Confirm whether assigning Intune administrator permissions to the Aeris Lab account resolves the issue. 
+##Result:## the **Change Primary user** control remained disabled after role assignment, so further investigation moved to **device join/enrollment state** rather than continuing RBAC changes.
 
 **Evidence:** Lab03_11–Lab03_13
 
