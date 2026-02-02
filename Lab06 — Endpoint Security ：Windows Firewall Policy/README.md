@@ -14,9 +14,11 @@ Deploy a Windows Firewall policy via **Intune Endpoint security → Firewall** t
 ---
 
 ## Key Lab Note (Why “Block” wasn’t visually obvious at first)
-In this run, the initial policy set **Default inbound action = Block** (Public).  
-However, the endpoint already showed **Block** / or the effective readout stayed **NotConfigured**, so the result was not visually obvious.  
-To make evidence **observable**, the policy was toggled to **Allow** (clear change), verified on the endpoint, then rolled back to **Block** (final target).
+In this run, the initial policy set **Default inbound action = Block** for the **Public** profile.  
+This change was not visually obvious at first because **Block is the default value** for this setting in the Intune UI (`Block (Default)`), so setting it to Block does not create a strong before/after contrast on the endpoint.  
+
+To make the evidence observable, the lab temporarily toggled the same setting to **Allow** (clear contrast), verified the change on PC1 using PowerShell readings, and then rolled back to **Block** as the final target state.
+
 
 ---
 
