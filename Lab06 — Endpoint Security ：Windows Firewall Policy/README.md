@@ -119,7 +119,7 @@ To make evidence **observable**, the policy was toggled to **Allow** (clear chan
 **Action:** Read firewall profile settings from ActiveStore to correlate the change.  
 **Expected:** Attempt to observe the inbound default change; in this run it appeared **NotConfigured** / not visually distinct.  
 **Evidence:**  
-![Lab06_14_PC1_PostPolicy_DefaultQueryNotConfigured_ActiveStoreInboundBlock](./evidences/Lab06_14_PC1_PostPolicy_DefaultQueryNotConfigured_ActiveStoreInboundBlock.png)
+![Lab06_14_PC1_PostPolicy_DefaultQueryNotConfigured_ActiveStoreInboundBlock](./evidences/Lab06_14__PC1_PostPolicy_DefaultQueryNotConfigured_ActiveStoreInboundBlock.png)
 
 ---
 
