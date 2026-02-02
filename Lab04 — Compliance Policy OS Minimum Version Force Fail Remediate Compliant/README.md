@@ -1,6 +1,7 @@
 # Lab04 — Compliance Policy OS Minimum Version Force Fail Remediate Compliant
 
 **Type:** LAB  
+**Date:**2026-1-27
 **Status:** Done  
 **Device:** PC1 (Windows 11 Pro)
 
