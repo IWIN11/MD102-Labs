@@ -99,7 +99,7 @@ Deploy a **device-scoped** Microsoft Edge policy via Intune so that PC1 shows:
 - Sites to open when the browser starts (User)  
 **Expected:** User-scoped startup settings are selected/visible.  
 **Evidence:**  
-![lab05_07_ActiontotakeonMicrosoftEdgestartupUser_SitestooopenwhenthebrowserstartsUser](./evidences/lab05_07_ActiontotakeonMicrosoftEdgestartupUser_SitestooopenwhenthebrowserstartsUser.png)
+![lab05_07_ActiontotakeonMicrosoftEdgestartupUser_SitestooopenwhenthebrowserstartsUser](./evidences/lab05_07_ActiontotakeonMicrosoftEdgestartupUser_SitestoopenwhenthebrowserstartsUser.png)
 
 ---
 
@@ -149,7 +149,7 @@ Deploy a **device-scoped** Microsoft Edge policy via Intune so that PC1 shows:
 - Sites to open when the browser starts (Device)  
 **Expected:** Device-scoped startup settings are selected/visible.  
 **Evidence:**  
-![lab05_07_ActiontotakeonMicrosoftEdgestartup_Sitestooopenwhenthebrowserstarts_device](./evidences/lab05_07_ActiontotakeonMicrosoftEdgestartup_Sitestooopenwhenthebrowserstarts_device.png)
+![lab05_07_ActiontotakeonMicrosoftEdgestartup_Sitestooopenwhenthebrowserstarts_device](./evidences/lab05_07_ActiontotakeonMicrosoftEdgestartup_Sitestoopenwhenthebrowserstarts_device.png)
 
 ---
 
@@ -231,4 +231,11 @@ Deploy a **device-scoped** Microsoft Edge policy via Intune so that PC1 shows:
 **Evidence:**  
 ![Incident_02_Intune_PC1_Compliant_LastCheckin](./evidences/Incident_02_Intune_PC1_Compliant_LastCheckin.png)
 
+### A3) Why "All devices" was used in this lab (scoping rationale)
+**Lab condition:** This tenant currently has only **one** managed Windows device (PC1). Assigning the device-scoped Edge profile to **All devices** is therefore a controlled shortcut: it targets only PC1 in practice and makes the result easy to observe without creating additional device rings.
+
+**Enterprise practice:** In real environments, avoid using **All devices** for testing or pilots. Create a dedicated **device group** (pilot ring) and assign the profile to that group to:
+- limit blast radius,
+- keep targeting intentional,
+- and support staged rollout (pilot → broad deployment).
 
