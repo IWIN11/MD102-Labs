@@ -81,7 +81,7 @@ Deploy a **device-scoped** Microsoft Edge policy via Intune so that PC1 shows:
 **Action:** Select the **(User)** variant of Home page URL setting.  
 **Expected:** The user-scoped setting is selected/visible.  
 **Evidence:**  
-![lab05_06_userbased_click_HomePageURL_user](./evidences/lab05_06_userbased_click_HomePageURL_user.png)
+![lab05_06_userbased_click_HomePageURL_user](./evidences/lab05_06_userBased_click_HomePageURL_user.png)
 
 ---
 
@@ -92,7 +92,7 @@ Deploy a **device-scoped** Microsoft Edge policy via Intune so that PC1 shows:
 - Sites to open when the browser starts (User)  
 **Expected:** User-scoped startup settings are selected/visible.  
 **Evidence:**  
-![lab05_07_ActiontotakeonMicrosoftEdgestartup_Sitestooopenwhenthebrowserstarts_user](./evidences/lab05_07_ActiontotakeonMicrosoftEdgestartup_Sitestooopenwhenthebrowserstarts_user.png)
+![lab05_07_ActiontotakeonMicrosoftEdgestartup_Sitestooopenwhenthebrowserstarts_user](./evidences/lab05_07_ActiontotakeonMicrosoftEdgestartupUser_SitestoopenwhenthebrowserstartsUser.png)
 
 ---
 
