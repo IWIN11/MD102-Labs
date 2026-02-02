@@ -23,9 +23,16 @@ Deploy a **device-scoped** Microsoft Edge policy via Intune so that PC1 shows:
 
 ---
 
+## Scope Note (Lab vs Enterprise)
+- **Lab condition:** This tenant has only **one** managed device (PC1), so assigning to **All devices** is acceptable for a controlled lab and makes validation straightforward.
+- **Enterprise practice:** In real environments, avoid using **All devices** for testing/pilots. Use a dedicated **device group** (pilot ring) to limit blast radius and keep scoping intentional.
+
+---
+
 ## Runbook (Step-by-step)
-> Evidence is presented strictly in the original capture order (no removal, no reordering).  
-> This run includes an incident path: **User-scoped attempt resulted in "Not applicable"**, then switching to **device scope** succeeded.
+> Evidence is presented in the captured order and reflects two paths:
+> - Attempt A: User-scoped settings → device shows **Not applicable**
+> - Attempt B: Device-scoped settings → applied + behavior change + JSON export
 
 ---
 
@@ -61,7 +68,7 @@ Deploy a **device-scoped** Microsoft Edge policy via Intune so that PC1 shows:
 ### 4) Intune — Start creating a Settings catalog profile
 **Where:** Intune admin center → Devices → Configuration profiles → Create profile  
 **Action:** Start a new profile (Windows 10 and later → Settings catalog).  
-**Expected:** Profile creation flow is started (create profile screen).  
+**Expected:** Profile creation flow is started.  
 **Evidence:**  
 ![lab05_04_Intune_devices_config_policies_createNew_createAprofile](./evidences/lab05_04_Intune_devices_config_policies_createNew_createAprofile.png)
 
@@ -81,7 +88,7 @@ Deploy a **device-scoped** Microsoft Edge policy via Intune so that PC1 shows:
 **Action:** Select the **(User)** variant of Home page URL setting.  
 **Expected:** The user-scoped setting is selected/visible.  
 **Evidence:**  
-![lab05_06_userbased_click_HomePageURL_user](./evidences/lab05_06_userBased_click_HomePageURL_user.png)
+![lab05_06_userBased_click_HomePageURL_user](./evidences/lab05_06_userBased_click_HomePageURL_user.png)
 
 ---
 
@@ -92,7 +99,7 @@ Deploy a **device-scoped** Microsoft Edge policy via Intune so that PC1 shows:
 - Sites to open when the browser starts (User)  
 **Expected:** User-scoped startup settings are selected/visible.  
 **Evidence:**  
-![lab05_07_ActiontotakeonMicrosoftEdgestartup_Sitestooopenwhenthebrowserstarts_user](./evidences/lab05_07_ActiontotakeonMicrosoftEdgestartupUser_SitestoopenwhenthebrowserstartsUser.png)
+![lab05_07_ActiontotakeonMicrosoftEdgestartupUser_SitestooopenwhenthebrowserstartsUser](./evidences/lab05_07_ActiontotakeonMicrosoftEdgestartupUser_SitestooopenwhenthebrowserstartsUser.png)
 
 ---
 
@@ -126,16 +133,45 @@ Deploy a **device-scoped** Microsoft Edge policy via Intune so that PC1 shows:
 
 ## Attempt B — Device-scoped deployment (Fix)
 
-### 11) Assignments — Move to device-scope targeting (All devices)
+### 11) Settings catalog — Select Home page URL (Device)
+**Where:** Microsoft Edge → Startup, home page and new tab page  
+**Action:** Select the **(Device)** variant of Home page URL setting.  
+**Expected:** The device-scoped setting is selected/visible.  
+**Evidence:**  
+![lab05_06_devicebased_click_HomePageURL_device](./evidences/lab05_06_devicebased_click_HomePageURL_device.png)
+
+---
+
+### 12) Settings catalog — Select startup action + startup URLs (Device)
+**Where:** Microsoft Edge → Startup, home page and new tab page  
+**Action:** Select the **(Device)** variants:
+- Action to take on Microsoft Edge startup (Device)  
+- Sites to open when the browser starts (Device)  
+**Expected:** Device-scoped startup settings are selected/visible.  
+**Evidence:**  
+![lab05_07_ActiontotakeonMicrosoftEdgestartup_Sitestooopenwhenthebrowserstarts_device](./evidences/lab05_07_ActiontotakeonMicrosoftEdgestartup_Sitestooopenwhenthebrowserstarts_device.png)
+
+---
+
+### 13) Settings catalog — Configure values (Device-scoped)
+**Where:** Configuration settings (Settings catalog)  
+**Action:** Enable the selected device-scoped settings and input URLs/behavior values.  
+**Expected:** Settings show Enabled + configured values for device scope.  
+**Evidence:**  
+![lab05_08_EdgePolicy_ConfigValues_SettingCatalog_device](./evidences/lab05_08_EdgePolicy_ConfigValues_SettingCatalog_device.png)
+
+---
+
+### 14) Assignments — Include All devices (Lab scoping)
 **Where:** Profile → Assignments  
-**Action:** Switch to device-scope targeting by including **All devices**.  
+**Action:** Assign the device-scoped configuration to **All devices**.  
 **Expected:** Included groups = All devices.  
 **Evidence:**  
 ![lab05_09_includegroup_AllDevices](./evidences/lab05_09_includegroup_AllDevices.png)
 
 ---
 
-### 12) Device — Trigger sync on PC1
+### 15) Device — Trigger sync on PC1
 **Where:** PC1 → Settings → Accounts → Access work or school → Info → Sync  
 **Action:** Trigger a manual sync to pull the updated device-scoped policy.  
 **Expected:** Sync is triggered and completes.  
@@ -144,7 +180,7 @@ Deploy a **device-scoped** Microsoft Edge policy via Intune so that PC1 shows:
 
 ---
 
-### 13) Device validation (Hard evidence) — Policies appear in edge://policy
+### 16) Device validation (Hard evidence) — Policies appear in edge://policy
 **Where:** PC1 → Edge → `edge://policy`  
 **Action:** Click **Reload policies**, refresh, and verify policy entries exist.  
 **Expected:** Device-scoped policy entries appear, including:
@@ -156,7 +192,7 @@ Deploy a **device-scoped** Microsoft Edge policy via Intune so that PC1 shows:
 
 ---
 
-### 14) Behavior validation — Startup pages open automatically
+### 17) Behavior validation — Startup pages open automatically
 **Where:** PC1 → Microsoft Edge  
 **Action:** Close Edge completely, reopen it, and observe startup behavior.  
 **Expected:** Startup pages open automatically (as configured).  
@@ -165,16 +201,34 @@ Deploy a **device-scoped** Microsoft Edge policy via Intune so that PC1 shows:
 
 ---
 
-### 15) Artifact — Exported policy values (JSON)
-**Where:** PC1 → Edge → `edge://policy` → (Export/Save policy values)  
+### 18) Artifact — Exported policy values (JSON)
+**Where:** PC1 → Edge → `edge://policy` → Export/Save policy values  
 **Action:** Save/export policy values as JSON for machine-verifiable evidence.  
-**Expected:** JSON shows the key policies with **machine** scope and intended values.  
+**Expected:** JSON shows key policies with **machine** scope and intended values.  
 **Evidence (raw file):**  
 [`lab05_14_edgepolicy_export.json`](./evidences/lab05_14_edgepolicy_export.json)
 
 ---
 
 ## Outcome
-- **User-scoped attempt:** device report showed **Not applicable** for PC1 (did not apply in this run).  
-- **Device-scoped fix:** policies appeared in `edge://policy`, startup behavior changed, and raw JSON export confirms machine-scoped values.
+- **User-scoped attempt:** Intune per-device report showed **Not applicable** for PC1.  
+- **Device-scoped fix:** Device-scoped settings were configured, assigned, synced, visible in `edge://policy`, and produced a clear behavior change. JSON export confirms machine-scoped values.
+
+
+---
+
+## Optional Appendix — Environment / Management Signals (Context Only)
+> These items provide supporting context about the device management state.  
+> They are **not** required to prove the Edge policy deployment outcome above.
+
+### A1) Device identity / join status (dsregcmd)
+**Purpose:** Provide a baseline signal of the device’s identity / join-related status during the lab window.  
+**Evidence:**  
+![Incident_01_dsregcmd_status](./evidences/Incident_01_dsregcmd_status.png)
+
+### A2) Intune device compliance + last check-in (context)
+**Purpose:** Show the device was actively checking in and in a healthy management state around the lab execution.  
+**Evidence:**  
+![Incident_02_Intune_PC1_Compliant_LastCheckin](./evidences/Incident_02_Intune_PC1_Compliant_LastCheckin.png)
+
 
